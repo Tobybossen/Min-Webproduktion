@@ -1,3 +1,132 @@
 @charset "utf-8";
 /* CSS Document */
+body {
+	background-color: aqua
+}
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif"
+}
 
+img {
+	height: ;
+}
+
+.top-bar {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	background: #BE181B;
+	height: 110px;
+	padding: 5px;
+	
+}
+
+.menu {
+	display: flex;
+	flex-direction: row;
+	list-style-type: none;
+	
+}
+
+li {
+	padding: 15px;
+	overflow: hidden;
+}
+
+.menu-box {
+	height: 100%;
+	width: 30%;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.icon, .icon::before, .icon::after {
+	display: block;
+	background: white;
+	position: absolute;
+	height: 4px;
+	width: 30px;
+	border-radius: 2px;
+	transition: transform 400ms; /*change time later*/
+}
+
+.icon::before {
+	content: "";
+	margin-top: -8px;
+}
+
+.icon::after {
+	content: "";
+	margin-top: 8px;
+}
+
+#activate:checked + .menu-box .icon::before {
+	margin-top: 0;
+	transform: rotate(45deg);
+	
+}
+
+#activate:checked + .menu-box .icon::after {
+	margin-top: 0;
+	transform: rotate(-45deg);
+}
+
+#activate:checked + .menu-box .icon {
+	background: rgba(205,86,88,0)
+}
+
+#activate {
+	display: none;
+	
+}
+
+.menu-box {
+	display: none;
+}
+
+@media screen and (max-width: 700px) {
+	.menu-box {
+		display: flex;
+	}
+	
+	.menu {
+		position: absolute;
+		top: 0;
+		margin-top: 110px;
+		left: 0;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	#activate ~ .menu li {
+		height: 0px;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		transition: height 400ms;
+	}
+	
+	#activate:checked ~ .menu li {
+		border: 1px solid white;
+		height: 40px;
+		padding: 5px;
+		transition: height 400ms;
+	}
+	
+	.menu li {
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		padding: 5px;
+		width: 100%;
+		background: #BE181B;
+	}
+}
