@@ -10,14 +10,16 @@
 	padding: 0px;
 	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif"
 }
-.apps ul {
-	float: right;
+
+h1 {
+	margin: 10px;
 }
 
-.apps p {
-	float: left;
-	margin-top: 10%;
+.apps ul {
+	float: right;
+	margin-right: 10%;
 }
+
 .apps li {
 	display: flex;
 	flex-direction: column;
@@ -31,15 +33,15 @@ li img {
 	width: 150px;
 }
 
-.front {
+.front, .aboutme {
 	display:flex;
 	flex-direction: row;
 	align-items: center;
 	align-content: center;
 }
-.front p {
-	margin-left: 10%;
-	
+
+.front p, .aboutme p {
+	margin-left: 5%;
 }
 
 .bigportrait {
@@ -73,7 +75,7 @@ li img {
 	list-style-type: none;
 }
 
-li {
+.top-bar li {
 	padding: 15px;
 	overflow: hidden;
 }
